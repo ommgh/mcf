@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "262e9573d2391c29c0cbf0bf5dd62277"
+name = "amazon-mcf"
+handle = "amazon-mcf-2"
+application_url = "https://typically-albania-apply-comparison.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://typically-albania-apply-comparison.trycloudflare.com/auth/callback",
+  "https://typically-albania-apply-comparison.trycloudflare.com/auth/shopify/callback",
+  "https://typically-albania-apply-comparison.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "quickstart-2fd4270e.myshopify.com"
+automatically_update_urls_on_dev = true
